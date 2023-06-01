@@ -42,8 +42,13 @@
             }
             
             function callMethod(method) {
+                // Call in iOS WKWebView
                 if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.cueSDK) {
                     window.webkit.messageHandlers.cueSDK.postMessage(JSON.stringify([requestId, serviceName, method]));
+                }
+                // Call in Android WebView
+                if (cueSDK) {
+                    cueSDK.postMessage(JSON.stringify([requestId, serviceName, method]));
                 }
             }
             
