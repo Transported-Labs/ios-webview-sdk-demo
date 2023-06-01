@@ -12,4 +12,4 @@ Demo-project for WebViewSDK to use camera torch from page loaded to WKWebView.
 3. Run demo-project in XCode.
 
 ## Sample of HTML-file
-Please find the sample HTML-file in assets of the demo project: [index.html](https://github.com/Transported-Labs/ios-webview-sdk-demo/blob/main/WebViewDemo/Resources/index.html))
+Please find the sample HTML-file in assets of the demo project: [index.html](https://github.com/Transported-Labs/ios-webview-sdk-demo/blob/main/WebViewDemo/Resources/index.html)
