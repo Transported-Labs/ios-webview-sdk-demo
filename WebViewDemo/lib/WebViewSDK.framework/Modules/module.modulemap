@@ -1,0 +1,11 @@
+framework module WebViewSDK {
+  umbrella header "WebViewSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module WebViewSDK.Swift {
+  header "WebViewSDK-Swift.h"
+  requires objc
+}
