@@ -6,6 +6,7 @@ trigger:
     # - develop
     # - testing
     # - staging
+    - pipeline_debug
 
 variables:
   vmImageMac: 'macos-latest'
@@ -29,7 +30,7 @@ variables:
     saveLast: 10
     uriPath: 'webview-sdk/ios'
     performPurgeAFD: true
-  ${{ elseif eq(variables['Build.SourceBranchName'], 'develop') }}:
+  ${{ elseif eq(variables['Build.SourceBranchName'], 'pipeline_debug') }}:
     webAppName: dev-dxp
     cdnAccountName: devdxpcdn
     cdnGroup: dev-dxp-grp
