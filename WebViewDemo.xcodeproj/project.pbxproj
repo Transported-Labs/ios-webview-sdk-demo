@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8141EFBD2A45896F008D46C5 /* ExportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8141EFBC2A45896F008D46C5 /* ExportOptions.plist */; };
 		81F5A91F29FFB9640059B694 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5A91E29FFB9640059B694 /* AppDelegate.swift */; };
 		81F5A92129FFB9640059B694 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5A92029FFB9640059B694 /* SceneDelegate.swift */; };
 		81F5A92329FFB9640059B694 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5A92229FFB9640059B694 /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8141EFBC2A45896F008D46C5 /* ExportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
 		81F5A91B29FFB9640059B694 /* WebviewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebviewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F5A91E29FFB9640059B694 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81F5A92029FFB9640059B694 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				81F5A92729FFB9690059B694 /* Assets.xcassets */,
 				81F5A92929FFB9690059B694 /* LaunchScreen.storyboard */,
 				81F5A92C29FFB9690059B694 /* Info.plist */,
+				8141EFBC2A45896F008D46C5 /* ExportOptions.plist */,
 			);
 			path = WebViewDemo;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81F5A92B29FFB9690059B694 /* LaunchScreen.storyboard in Resources */,
+				8141EFBD2A45896F008D46C5 /* ExportOptions.plist in Resources */,
 				81F5A93729FFC2A70059B694 /* index.html in Resources */,
 				81F5A92829FFB9690059B694 /* Assets.xcassets in Resources */,
 				81F5A92629FFB9640059B694 /* Main.storyboard in Resources */,
