@@ -149,6 +149,7 @@ stages:
               xcWorkspacePath: 'WebViewDemo.xcodeproj/project.xcworkspace'
               xcodeVersion: 'default'
               args: 'CONFIGURATION_BUILD_DIR=$(Build.BinariesDirectory)/build_output'
+              packageApp: true
 
           - script: ls -lFht $(Build.BinariesDirectory)/build_output
             displayName: 'show the contents of $(Build.BinariesDirectory)/build_output'
