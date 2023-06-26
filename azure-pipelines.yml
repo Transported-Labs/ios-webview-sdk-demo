@@ -148,7 +148,7 @@ stages:
               configuration: 'Release'
               xcWorkspacePath: 'WebViewDemo.xcodeproj/project.xcworkspace'
               xcodeVersion: 'default'
-              args: 'CONFIGURATION_BUILD_DIR=$(Build.BinariesDirectory)/build_output, CODE_SIGNING_ALLOWED=No'
+              args: 'CONFIGURATION_BUILD_DIR=$(Build.BinariesDirectory)/build_output, CODE_SIGNING_ALLOWED=No, CODE_SIGNING_REQUIRED=NO'
               packageApp: true
               # xcodebuild -exportArchive -archivePath ./build/WebVewDemoRelease.xcarchive -exportPath ./build/output -exportOptionsPlist ./WebViewDemo/ExportOptions.plist
 
