@@ -164,6 +164,7 @@ stages:
               ls -lFht ./build/WebVewDemoRelease.xcarchive/** # $(Build.BinariesDirectory)/build_output
               ls -lFht ./build/WebVewDemoRelease.xcarchive/**/**
               ls -lFht ./build/WebVewDemoRelease.xcarchive/**/**/**
+              ls -lFht ./build/WebVewDemoRelease.xcarchive/Products/Applications/**
               ls -lFht ./build/output/
               ls -lFht ./build/output/**
               ls -lFht ./build/output/**/**
