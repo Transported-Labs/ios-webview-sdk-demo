@@ -148,9 +148,10 @@ stages:
               configuration: 'Release'
               xcWorkspacePath: 'WebViewDemo.xcodeproj/project.xcworkspace'
               xcodeVersion: 'default'
-              args: '-verbose'
+              args: 'CODE_SIGNING_ALLOWED=No CODE_SIGNING_REQUIRED=NO -verbose' # CONFIGURATION_BUILD_DIR=
               packageApp: true
-              archivePath: 'CONFIGURATION_BUILD_DIR=$(Build.BinariesDirectory)/build_output'
+              exportTeamId: 'DXP Team'
+              archivePath: '$(Build.BinariesDirectory)/build_output'
               signingOption: 'manual'
               signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
               provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
@@ -159,7 +160,6 @@ stages:
 
           - script: ls -lFht $(Build.BinariesDirectory)/build_output
             displayName: 'show the contents of $(Build.BinariesDirectory)/build_output'
-            condition: and(succeededOrFailed(), ne(variables['Build.Reason'], 'PullRequest'))
 
   #         - task: ArchiveFiles@2
   #           displayName: 'Archive WebViewSDK.framework'
