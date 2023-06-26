@@ -156,11 +156,11 @@ stages:
               # signingOption: 'manual'
               # signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
               # provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
-              # teamId: 'G7GD45FUCY'
+              teamId: '$(DEVELOPMENT_TEAM)'
               # xcodebuild -exportArchive -archivePath ./build/WebVewDemoRelease.xcarchive -exportPath ./build/output -exportOptionsPlist ./WebViewDemo/ExportOptions.plist
 
           - script: |
-              /usr/bin/xcodebuild -exportArchive -archivePath ./build/WebVewDemoRelease.xcarchive -exportPath ./build/output -exportOptionsPlist ./WebViewDemo/ExportOptions.plist
+              # /usr/bin/xcodebuild -exportArchive -archivePath ./build/WebVewDemoRelease.xcarchive -exportPath ./build/output -exportOptionsPlist ./WebViewDemo/ExportOptions.plist
               ls -lFht ./build/WebVewDemoRelease.xcarchive
               ls -lFht ./build/WebVewDemoRelease.xcarchive/** # $(Build.BinariesDirectory)/build_output
               ls -lFht ./build/WebVewDemoRelease.xcarchive/**/**
