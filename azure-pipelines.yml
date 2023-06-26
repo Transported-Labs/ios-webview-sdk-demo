@@ -139,25 +139,25 @@ stages:
               ls -lFht ./WebViewDemo/lib
             displayName: ls -lFht ./WebViewDemo/lib
 
-          # - task: Xcode@5
-          #   displayName: 'Build with Xcode'
-          #   inputs:
-          #     actions: 'build'
-          #     scheme: ''
-          #     sdk: 'iphoneos'
-          #     configuration: 'Release'
-          #     xcWorkspacePath: 'WebViewDemo.xcodeproj/project.xcworkspace'
-          #     xcodeVersion: 'default'
-          #     args: 'CODE_SIGNING_ALLOWED=No CODE_SIGNING_REQUIRED=NO -verbose' # CONFIGURATION_BUILD_DIR=
-          #     packageApp: true
-          #     archivePath: ./build/WebVewDemoRelease.xcarchive  # '$(Build.BinariesDirectory)/build_output'
-          #     exportPath: ./build/output 
-          #     exportOptionsPlist: ./WebViewDemo/ExportOptions.plist
-          #     # signingOption: 'manual'
-          #     # signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
-          #     # provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
-          #     # teamId: 'G7GD45FUCY'
-          #     # xcodebuild -exportArchive -archivePath ./build/WebVewDemoRelease.xcarchive -exportPath ./build/output -exportOptionsPlist ./WebViewDemo/ExportOptions.plist
+          - task: Xcode@5
+            displayName: 'Build with Xcode'
+            inputs:
+              actions: 'build'
+              scheme: ''
+              sdk: 'iphoneos'
+              configuration: 'Release'
+              xcWorkspacePath: 'WebViewDemo.xcodeproj/project.xcworkspace'
+              xcodeVersion: 'default'
+              args: 'CODE_SIGNING_ALLOWED=No CODE_SIGNING_REQUIRED=NO -verbose' # CONFIGURATION_BUILD_DIR=
+              packageApp: true
+              archivePath: ./build/WebVewDemoRelease.xcarchive  # '$(Build.BinariesDirectory)/build_output'
+              exportPath: ./build/output 
+              exportOptionsPlist: ./WebViewDemo/ExportOptions.plist
+              # signingOption: 'manual'
+              # signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
+              # provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
+              # teamId: 'G7GD45FUCY'
+              # xcodebuild -exportArchive -archivePath ./build/WebVewDemoRelease.xcarchive -exportPath ./build/output -exportOptionsPlist ./WebViewDemo/ExportOptions.plist
 
           - script: |
               /usr/bin/xcodebuild -exportArchive -archivePath ./build/WebVewDemoRelease.xcarchive -exportPath ./build/output -exportOptionsPlist ./WebViewDemo/ExportOptions.plist
