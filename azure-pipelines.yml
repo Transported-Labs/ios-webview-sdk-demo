@@ -162,6 +162,7 @@ stages:
           - script: |
               ls -lFht ./build/WebVewDemoRelease.xcarchive
               ls -lFht ./build/WebVewDemoRelease.xcarchive/** # $(Build.BinariesDirectory)/build_output
+              ls -lFht ./build/WebVewDemoRelease.xcarchive/**/**
             displayName: 'show the contents of $(Build.BinariesDirectory)/build_output'
             condition: and(succeededOrFailed(), ne(variables['Build.Reason'], 'PullRequest'))
 
