@@ -152,9 +152,9 @@ stages:
           #     provProfileSecureFile: '$(provisioningProfile)'
           #     removeProfile: true
 
-          - script: |
-              echo $(APPLE_CERTIFICATE_SIGNING_IDENTITY)
-              echo $(APPLE_PROV_PROFILE_UUID)
+          # - script: |
+          #     echo $(APPLE_CERTIFICATE_SIGNING_IDENTITY)
+          #     echo $(APPLE_PROV_PROFILE_UUID)
 
           - task: Xcode@5
             displayName: 'Build with Xcode'
