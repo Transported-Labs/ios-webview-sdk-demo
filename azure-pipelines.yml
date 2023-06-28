@@ -139,6 +139,19 @@ stages:
               ls -lFht ./WebViewDemo/lib
             displayName: ls -lFht ./WebViewDemo/lib
 
+          - task: InstallAppleCertificate@2
+            inputs:
+              certSecureFile: '$(ios_enterprise.p12)'
+              certPwd: '$(p12Password)'
+              keychain: 'temp'
+              deleteCert: true 
+
+          - task: InstallAppleProvisioningProfile@1
+            inputs:
+              provisioningProfileLocation: 'secureFiles'
+              provProfileSecureFile: '$(provisioningProfile)'
+              removeProfile: true
+
           - task: Xcode@5
             displayName: 'Build with Xcode'
             inputs:
@@ -153,11 +166,10 @@ stages:
               archivePath: ./build/WebVewDemoRelease.xcarchive  # '$(Build.BinariesDirectory)/build_output'
               exportPath: ./build/output 
               exportOptionsPlist: ./WebViewDemo/ExportOptions.plist
-              # signingOption: 'manual'
-              # signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
-              # provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
-              teamId: '$(DEVELOPMENT_TEAM)'
-              # xcodebuild -exportArchive -archivePath ./build/WebVewDemoRelease.xcarchive -exportPath ./build/output -exportOptionsPlist ./WebViewDemo/ExportOptions.plist
+              signingOption: 'manual'
+              signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
+              provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
+              # xcodebuild -exportArchive -archivePath ./build/WebVewDemoRelease.xcarchive -exportPath ./build/output -exportOptionsPlist ./WebViewDemo/ExportOptions.plist 
 
           - script: |
               # /usr/bin/xcodebuild -exportArchive -archivePath ./build/WebVewDemoRelease.xcarchive -exportPath ./build/output -exportOptionsPlist ./WebViewDemo/ExportOptions.plist
