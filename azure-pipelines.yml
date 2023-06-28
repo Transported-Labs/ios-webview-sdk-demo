@@ -141,7 +141,7 @@ stages:
 
           - task: InstallAppleCertificate@2
             inputs:
-              certSecureFile: '$(p12FileName)'
+              certSecureFile: '$(p12FileName_wop)'
               certPwd: '$(p12Password)'
               keychain: 'temp'
               deleteCert: true 
@@ -161,7 +161,7 @@ stages:
               configuration: 'Release'
               xcWorkspacePath: 'WebViewDemo.xcodeproj/project.xcworkspace'
               xcodeVersion: 'default'
-              args: 'CODE_SIGNING_ALLOWED=No CODE_SIGNING_REQUIRED=NO -verbose' # CONFIGURATION_BUILD_DIR=
+              # args: 'CODE_SIGNING_ALLOWED=No CODE_SIGNING_REQUIRED=NO -verbose' # CONFIGURATION_BUILD_DIR=
               packageApp: true
               archivePath: ./build/WebVewDemoRelease.xcarchive  # '$(Build.BinariesDirectory)/build_output'
               exportPath: ./build/output 
