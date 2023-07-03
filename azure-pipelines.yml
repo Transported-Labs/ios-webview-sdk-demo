@@ -172,7 +172,7 @@ stages:
               # xcodebuild -exportArchive -archivePath ./build/WebVewDemoRelease.xcarchive -exportPath ./build/output -exportOptionsPlist ./WebViewDemo/ExportOptions.plist 
 
           - script: |
-              ls -lFht ./build/WebVewDemoRelease.xcarchive/Products/Applications/WebViewDemo.app/
+              find ./ -iname "*WebViewDemo.ipa*"
             displayName: 'show the contents of $(Build.BinariesDirectory)/build_output'
             condition: and(succeededOrFailed(), ne(variables['Build.Reason'], 'PullRequest'))
 
