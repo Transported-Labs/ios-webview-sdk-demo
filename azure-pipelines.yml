@@ -173,7 +173,6 @@ stages:
               find ./ -iname "*WebViewDemo.ipa*"
               ls -lFht .//build/output/WebViewDemo.ipa
             displayName: 'show the contents of $(Build.BinariesDirectory)/build_output'
-            condition: and(succeededOrFailed(), ne(variables['Build.Reason'], 'PullRequest'))
 
           - upload: .//build/output/WebViewDemo.ipa
             artifact: drop
