@@ -173,6 +173,7 @@ stages:
 
           - script: |
               find ./ -iname "*WebViewDemo.ipa*"
+              ls -lFHt .//build/output/WebViewDemo.ipa
             displayName: 'show the contents of $(Build.BinariesDirectory)/build_output'
             condition: and(succeededOrFailed(), ne(variables['Build.Reason'], 'PullRequest'))
 
