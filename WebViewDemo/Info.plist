@@ -4,6 +4,8 @@
 <dict>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>We just want to sync to the music!</string>
+	<key>NSCameraUsageDescription</key>
+	<string>So you can participate in the show and take photos simultaneously</string>
 	<key>CFBundleIdentifier</key>
 	<string></string>
 	<key>UIApplicationSceneManifest</key>
