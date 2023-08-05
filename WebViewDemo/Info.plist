@@ -6,6 +6,10 @@
 	<string>We just want to sync to the music!</string>
 	<key>NSCameraUsageDescription</key>
 	<string>So you can participate in the show and take photos simultaneously</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>To save photos of the event!</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To save photos of the event!</string>
 	<key>CFBundleIdentifier</key>
 	<string></string>
 	<key>UIApplicationSceneManifest</key>
