@@ -26,14 +26,14 @@ class ViewController: UIViewController {
         }
         let sdkController = WebViewController()
 //        sdkController.modalPresentationStyle = .fullScreen
-        present(sdkController, animated: true) {
-            if let url = URL(string: urlString) {
-                do {
-                    try sdkController.navigateTo(url: url)
-                } catch {
-                    sdkController.dismiss(animated: true)
-                    print(error)
-                }
+        if let url = URL(string: urlString) {
+            do {
+                try sdkController.navigateTo(url: url)
+                present(sdkController, animated: true)
+            } catch InvalidUrlError.runtimeError(let message){
+                self.showToast(message: message, seconds: 2.0)
+            } catch {
+                self.showToast(message: error.localizedDescription, seconds: 2.0)
             }
         }
     }
@@ -49,3 +49,16 @@ class ViewController: UIViewController {
     }
 }
 
+extension UIViewController{
+
+    func showToast(message : String, seconds: Double){
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.view.backgroundColor = .systemBackground
+        alert.view.alpha = 0.5
+        alert.view.layer.cornerRadius = 15
+        self.present(alert, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds) {
+            alert.dismiss(animated: true)
+        }
+    }
+}
