@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8141EFBD2A45896F008D46C5 /* ExportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8141EFBC2A45896F008D46C5 /* ExportOptions.plist */; };
-		8141EFC92A459F26008D46C5 /* WebViewSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8141EFC82A459F25008D46C5 /* WebViewSDK.framework */; };
-		8141EFCA2A459F26008D46C5 /* WebViewSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8141EFC82A459F25008D46C5 /* WebViewSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		81F5A91F29FFB9640059B694 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5A91E29FFB9640059B694 /* AppDelegate.swift */; };
 		81F5A92129FFB9640059B694 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5A92029FFB9640059B694 /* SceneDelegate.swift */; };
 		81F5A92329FFB9640059B694 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5A92229FFB9640059B694 /* ViewController.swift */; };
@@ -26,7 +24,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8141EFCA2A459F26008D46C5 /* WebViewSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,7 +32,6 @@
 
 /* Begin PBXFileReference section */
 		8141EFBC2A45896F008D46C5 /* ExportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
-		8141EFC82A459F25008D46C5 /* WebViewSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebViewSDK.framework; path = WebViewDemo/lib/WebViewSDK.framework; sourceTree = "<group>"; };
 		81F5A91B29FFB9640059B694 /* WebViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F5A91E29FFB9640059B694 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81F5A92029FFB9640059B694 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,27 +48,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8141EFC92A459F26008D46C5 /* WebViewSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8141EFC12A459D98008D46C5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8141EFC82A459F25008D46C5 /* WebViewSDK.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		81F5A91229FFB9640059B694 = {
 			isa = PBXGroup;
 			children = (
 				81F5A91D29FFB9640059B694 /* WebViewDemo */,
 				81F5A91C29FFB9640059B694 /* Products */,
-				8141EFC12A459D98008D46C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
