@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         if let url = URL(string: urlString) {
             do {
                 try sdkController.navigateTo(url: url)
+                sdkController.modalPresentationStyle = .fullScreen
                 present(sdkController, animated: true)
             } catch InvalidUrlError.runtimeError(let message){
                 self.showToast(message: message, seconds: 2.0)
@@ -40,6 +41,7 @@ class ViewController: UIViewController {
     
     @IBAction func openFileButtonPressed(_ sender: Any) {
         let sdkController = WebViewController()
+        sdkController.modalPresentationStyle = .fullScreen
         present(sdkController, animated: true) {
             // Navigate to local testing page
             if let url = Bundle.main.url(forResource: "index", withExtension: "html") {
