@@ -1,0 +1,16 @@
+PODS:
+  - WebViewSDK (0.0.7)
+
+DEPENDENCIES:
+  - WebViewSDK (from `../ios-webview-sdk`)
+
+EXTERNAL SOURCES:
+  WebViewSDK:
+    :path: "../ios-webview-sdk"
+
+SPEC CHECKSUMS:
+  WebViewSDK: 8938045728757013d6e539486574661e39d1972d
+
+PODFILE CHECKSUM: 973d5706570564ea9786d17dee69b04fda50dcce
+
+COCOAPODS: 1.14.3
