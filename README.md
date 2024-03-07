@@ -21,5 +21,48 @@ pod install
 ```
 xcodebuild archive -workspace WebViewDemo.xcworkspace -scheme WebVewDemo -configuration Release -archivePath ./build/WebVewDemoRelease.xcarchive
 ```
-## Sample of HTML-file
-Please find the sample HTML-file in assets of the demo project: [index.html](https://github.com/Transported-Labs/ios-webview-sdk-demo/blob/main/WebViewDemo/Resources/index.html)
+## Integration
+
+Simply execute the following code:
+
+```swift
+    @IBAction func navigateButtonPressed(_ sender: Any) {
+        let urlString = "<your URL from CUE>"
+        if let url = URL(string: urlString) {
+            do {
+                try sdkController.navigateTo(url: url)
+                sdkController.modalPresentationStyle = .fullScreen
+                present(sdkController, animated: true)
+            } catch InvalidUrlError.runtimeError(let message){
+                print("URL is not valid: \(message)")
+            } catch {
+                // Any other error occured
+                print(error.localizedDescription)
+            }
+        }
+    }
+```
+## Pre-fetch
+
+To pre-fetch lightshow resources is very similar to navigation, but we should keep sdkController hidden and add to URL preload parameter.
+Just execute the following code:
+
+```swift
+    @IBAction func prefetchButtonPressed(_ sender: Any) {
+        let urlString = "<your URL from CUE>"
+        // Add parameter to original URL
+        if let url = URL(string: "\(urlString)&preload=true") {
+            do {
+                try sdkController.navigateTo(url: url) {progress in
+                    // You can get progress from 0 to 100 during the pre-fetch process
+                    self.prefetchButton.setTitle("Fetched:\(progress)%", for: .normal)
+                }
+            } catch InvalidUrlError.runtimeError(let message){
+                print("URL is not valid: \(message)")
+            } catch {
+                // Any other error occured
+                print(error.localizedDescription)
+            }
+        }
+    }
+```
