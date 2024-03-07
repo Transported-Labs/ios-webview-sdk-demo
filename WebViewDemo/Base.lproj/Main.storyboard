@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,15 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5B-0b-5p0">
-                                <rect key="frame" x="16" y="176" width="361" height="300"/>
+                                <rect key="frame" x="16" y="166" width="361" height="320"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type URL to navigate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Plc-lM-oZQ">
-                                        <rect key="frame" x="10" y="50" width="341" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type URL to navigate" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Plc-lM-oZQ">
+                                        <rect key="frame" x="10" y="80" width="343" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="url"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxV-mB-6z4">
-                                        <rect key="frame" x="97.000000000000014" y="114" width="167.33333333333337" height="35"/>
+                                        <rect key="frame" x="97.000000000000014" y="185" width="167.33333333333337" height="35"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Navigate to URL"/>
                                         <connections>
@@ -34,25 +34,46 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5Q-h8-urc">
-                                        <rect key="frame" x="97.000000000000014" y="199" width="167.33333333333337" height="35"/>
+                                        <rect key="frame" x="97.000000000000014" y="240" width="167.33333333333337" height="35"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Open sample page"/>
                                         <connections>
                                             <action selector="openFileButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vId-Cv-4Zv"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgK-FL-6JQ">
+                                        <rect key="frame" x="97.000000000000014" y="130" width="167.33333333333337" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Pre-fetch"/>
+                                        <connections>
+                                            <action selector="prefetchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ii5-Il-fub"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0S-PZ-IFC">
+                                        <rect key="frame" x="135.66666666666666" y="25" width="90" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Scan QR"/>
+                                        <connections>
+                                            <action selector="scanQRButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bEb-tp-dOw"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
+                                    <constraint firstItem="xgK-FL-6JQ" firstAttribute="top" secondItem="Plc-lM-oZQ" secondAttribute="bottom" constant="16" id="1Zv-ly-aw7"/>
+                                    <constraint firstItem="d5Q-h8-urc" firstAttribute="top" secondItem="oxV-mB-6z4" secondAttribute="bottom" constant="20" id="FHM-cL-FJW"/>
                                     <constraint firstItem="d5Q-h8-urc" firstAttribute="centerX" secondItem="f5B-0b-5p0" secondAttribute="centerX" id="I12-M1-jxL"/>
-                                    <constraint firstItem="Plc-lM-oZQ" firstAttribute="top" secondItem="f5B-0b-5p0" secondAttribute="top" constant="50" id="LkK-It-VvT"/>
+                                    <constraint firstItem="Plc-lM-oZQ" firstAttribute="top" secondItem="f5B-0b-5p0" secondAttribute="top" constant="80" id="LkK-It-VvT"/>
+                                    <constraint firstItem="xgK-FL-6JQ" firstAttribute="centerX" secondItem="f5B-0b-5p0" secondAttribute="centerX" id="Me9-xR-44t"/>
+                                    <constraint firstItem="oxV-mB-6z4" firstAttribute="top" secondItem="xgK-FL-6JQ" secondAttribute="bottom" constant="20" id="Zbs-6q-o9t"/>
                                     <constraint firstItem="oxV-mB-6z4" firstAttribute="centerX" secondItem="f5B-0b-5p0" secondAttribute="centerX" id="aGv-fV-VEf"/>
-                                    <constraint firstAttribute="trailing" secondItem="Plc-lM-oZQ" secondAttribute="trailing" constant="10" id="cQY-ja-2gO"/>
+                                    <constraint firstItem="d5Q-h8-urc" firstAttribute="width" secondItem="xgK-FL-6JQ" secondAttribute="width" id="aNc-7u-SQ3"/>
+                                    <constraint firstItem="Plc-lM-oZQ" firstAttribute="top" secondItem="c0S-PZ-IFC" secondAttribute="bottom" constant="20" id="b4E-rA-ajq"/>
+                                    <constraint firstItem="c0S-PZ-IFC" firstAttribute="centerX" secondItem="f5B-0b-5p0" secondAttribute="centerX" id="gsx-ra-McW"/>
                                     <constraint firstItem="Plc-lM-oZQ" firstAttribute="leading" secondItem="f5B-0b-5p0" secondAttribute="leading" constant="10" id="hjj-1e-gdp"/>
-                                    <constraint firstAttribute="height" constant="300" id="leA-6m-jgd"/>
-                                    <constraint firstItem="d5Q-h8-urc" firstAttribute="top" secondItem="oxV-mB-6z4" secondAttribute="bottom" constant="50" id="myi-98-uY6"/>
+                                    <constraint firstAttribute="trailing" secondItem="Plc-lM-oZQ" secondAttribute="trailing" constant="8" id="l8d-az-qeF"/>
+                                    <constraint firstAttribute="height" constant="320" id="leA-6m-jgd"/>
                                     <constraint firstItem="d5Q-h8-urc" firstAttribute="width" secondItem="oxV-mB-6z4" secondAttribute="width" id="o75-T0-g4s"/>
-                                    <constraint firstItem="oxV-mB-6z4" firstAttribute="top" secondItem="Plc-lM-oZQ" secondAttribute="bottom" constant="30" id="tAp-GZ-dZ4"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -65,6 +86,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="prefetchButton" destination="xgK-FL-6JQ" id="iwq-5F-XFm"/>
                         <outlet property="urlTextField" destination="Plc-lM-oZQ" id="CmO-vL-ewE"/>
                     </connections>
                 </viewController>
@@ -78,7 +100,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -10,11 +10,51 @@ import WebViewSDK
 
 class ViewController: UIViewController {
 
+    lazy var sdkController = WebViewController()
+    lazy var scannerViewController = ScannerViewController()
+    
     @IBOutlet weak var urlTextField: UITextField!
+    @IBOutlet weak var prefetchButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func scanQRButtonPressed(_ sender: Any) {
+        present(scannerViewController, animated: true)
+        do {
+            try scannerViewController.scan {result in
+                self.scannerViewController.dismiss(animated: true)
+                self.urlTextField.text = result
+                if result.contains("https://") {
+                    self.navigateButtonPressed(sender)
+                }
+            }
+        } catch {
+            self.showToast(message: error.localizedDescription, seconds: 2.0)
+        }
+    }
+    
+    @IBAction func prefetchButtonPressed(_ sender: Any) {
+        let urlString = self.urlTextField.text ?? ""
+        guard urlString != "" else {
+            print("Empty URL is not allowed")
+            return
+        }
+        
+        if let url = URL(string: "\(urlString)&preload=true") {
+            do {
+                try sdkController.navigateTo(url: url) {progress in
+                    self.prefetchButton.setTitle("Fetched:\(progress)%", for: .normal)
+                    self.prefetchButton.invalidateIntrinsicContentSize()
+                }
+            } catch InvalidUrlError.runtimeError(let message){
+                self.showToast(message: message, seconds: 2.0)
+            } catch {
+                self.showToast(message: error.localizedDescription, seconds: 2.0)
+            }
+        }
     }
     
     @IBAction func navigateButtonPressed(_ sender: Any) {
@@ -24,11 +64,10 @@ class ViewController: UIViewController {
             print("Empty URL is not allowed")
             return
         }
-        let sdkController = WebViewController()
-//        sdkController.modalPresentationStyle = .fullScreen
+        
         if let url = URL(string: urlString) {
             do {
-                try sdkController.navigateTo(url: url)
+                try sdkController.navigateTo(url: url, progressHandler: nil)
                 sdkController.modalPresentationStyle = .fullScreen
                 present(sdkController, animated: true)
             } catch InvalidUrlError.runtimeError(let message){
