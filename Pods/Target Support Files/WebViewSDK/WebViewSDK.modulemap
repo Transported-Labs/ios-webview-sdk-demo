@@ -1,6 +1,0 @@
-framework module WebViewSDK {
-  umbrella header "WebViewSDK-umbrella.h"
-
-  export *
-  module * { export * }
-}
