@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37B138FEF9CF4DB83B4EADC0 /* Pods_WebViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9238450F67696738416A5FB5 /* Pods_WebViewDemo.framework */; };
 		5254CAE32B98D3410052AFF4 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254CAE22B98D3410052AFF4 /* ScannerViewController.swift */; };
 		8141EFBD2A45896F008D46C5 /* ExportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8141EFBC2A45896F008D46C5 /* ExportOptions.plist */; };
 		81F5A91F29FFB9640059B694 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5A91E29FFB9640059B694 /* AppDelegate.swift */; };
@@ -19,21 +18,9 @@
 		81F5A93729FFC2A70059B694 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 81F5A93629FFC2A70059B694 /* index.html */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		8141EFC52A459D9B008D46C5 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		5254CAE22B98D3410052AFF4 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		529E66972BA34ABE006B2B31 /* CueLightShow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CueLightShow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8141EFBC2A45896F008D46C5 /* ExportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
 		81F5A91B29FFB9640059B694 /* WebViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F5A91E29FFB9640059B694 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,9 +31,6 @@
 		81F5A92A29FFB9690059B694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81F5A92C29FFB9690059B694 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81F5A93629FFC2A70059B694 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		9238450F67696738416A5FB5 /* Pods_WebViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FF520519480055B1C805206 /* Pods-WebViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewDemo.release.xcconfig"; path = "Target Support Files/Pods-WebViewDemo/Pods-WebViewDemo.release.xcconfig"; sourceTree = "<group>"; };
-		D2580872010907F9FD058B89 /* Pods-WebViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewDemo.debug.xcconfig"; path = "Target Support Files/Pods-WebViewDemo/Pods-WebViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,28 +38,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37B138FEF9CF4DB83B4EADC0 /* Pods_WebViewDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14F7419B6D6E03DFC410FB2B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D2580872010907F9FD058B89 /* Pods-WebViewDemo.debug.xcconfig */,
-				9FF520519480055B1C805206 /* Pods-WebViewDemo.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		2BD74D84719A343859957D21 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9238450F67696738416A5FB5 /* Pods_WebViewDemo.framework */,
+				529E66972BA34ABE006B2B31 /* CueLightShow.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DA0DDA256559D6BEC0C3A9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		81F5A91229FFB9640059B694 = {
@@ -83,8 +64,8 @@
 			children = (
 				81F5A91D29FFB9640059B694 /* WebViewDemo */,
 				81F5A91C29FFB9640059B694 /* Products */,
-				14F7419B6D6E03DFC410FB2B /* Pods */,
 				2BD74D84719A343859957D21 /* Frameworks */,
+				7DA0DDA256559D6BEC0C3A9B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,12 +109,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81F5A92F29FFB9690059B694 /* Build configuration list for PBXNativeTarget "WebViewDemo" */;
 			buildPhases = (
-				2D1BEDBFC5188CA78956F135 /* [CP] Check Pods Manifest.lock */,
 				81F5A91729FFB9640059B694 /* Sources */,
 				81F5A91829FFB9640059B694 /* Frameworks */,
 				81F5A91929FFB9640059B694 /* Resources */,
-				8141EFC52A459D9B008D46C5 /* Embed Frameworks */,
-				F918465D55E2821FA5C618A0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,48 +169,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2D1BEDBFC5188CA78956F135 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WebViewDemo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F918465D55E2821FA5C618A0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WebViewDemo/Pods-WebViewDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WebViewDemo/Pods-WebViewDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WebViewDemo/Pods-WebViewDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		81F5A91729FFB9640059B694 /* Sources */ = {
@@ -318,7 +254,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -372,7 +308,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -384,7 +320,6 @@
 		};
 		81F5A93029FFB9690059B694 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2580872010907F9FD058B89 /* Pods-WebViewDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -404,7 +339,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -422,7 +357,6 @@
 		};
 		81F5A93129FFB9690059B694 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9FF520519480055B1C805206 /* Pods-WebViewDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -442,7 +376,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
