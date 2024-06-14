@@ -81,14 +81,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func navigateButtonPressed(_ sender: Any) {
-//        let urlString = "https://www.google.com"
-        let urlString = self.urlTextField.text ?? ""
-        guard urlString != "" else {
-            print("Empty URL is not allowed")
-            return
-        }
-        
+    fileprivate func navigateToURL(_ urlString: String) {
         if let url = URL(string: urlString) {
             do {
                 statusLineCount = 0
@@ -106,6 +99,26 @@ class ViewController: UIViewController {
                 self.showToast(message: error.localizedDescription, seconds: 2.0)
             }
         }
+    }
+    
+    @IBAction func navigateButtonPressed(_ sender: Any) {
+//        let urlString = "https://www.google.com"
+        let urlString = self.urlTextField.text ?? ""
+        guard urlString != "" else {
+            print("Empty URL is not allowed")
+            return
+        }
+        navigateToURL(urlString)
+    }
+    
+    @IBAction func navigateWithPrivacyButtonPressed(_ sender: Any) {
+        let urlString = self.urlTextField.text ?? ""
+        guard urlString != "" else {
+            print("Empty URL is not allowed")
+            return
+        }
+        let urlPrivacy = "\(urlString)&privacy=true"
+        navigateToURL(urlPrivacy)
     }
     
     @IBAction func openFileButtonPressed(_ sender: Any) {
