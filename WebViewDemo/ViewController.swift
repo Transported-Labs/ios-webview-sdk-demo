@@ -15,10 +15,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var prefetchButton: UIButton!
+    @IBOutlet weak var loadingStatusTextView: UITextView!
+    @IBOutlet weak var skipJSInLogSwitch: UISwitch!
+    var statusLineCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        loadingStatusTextView.text = ""
     }
     
     @IBAction func scanQRButtonPressed(_ sender: Any) {
@@ -36,6 +39,21 @@ class ViewController: UIViewController {
         }
     }
     
+    fileprivate func addToLog(urlString: String, sizeString: String) {
+        DispatchQueue.main.async { [self] in
+            let url = URL(string: urlString)
+            if !(((url?.pathExtension == "js") || (url?.pathExtension == "css")) && (skipJSInLogSwitch.isOn)) {
+                statusLineCount += 1
+                loadingStatusTextView.text += "\(statusLineCount). Loaded: \(urlString), size: \(sizeString)\n"
+            }
+        }
+    }
+    
+    @IBAction func clearStatusButtonPressed(_ sender: Any) {
+        statusLineCount = 0
+        loadingStatusTextView.text = ""
+    }
+    
     @IBAction func prefetchButtonPressed(_ sender: Any) {
         let urlString = self.urlTextField.text ?? ""
         guard urlString != "" else {
@@ -45,10 +63,16 @@ class ViewController: UIViewController {
         
         if let url = URL(string: "\(urlString)&preload=true") {
             do {
-                try sdkController.navigateTo(url: url) {progress in
+                statusLineCount = 0
+                loadingStatusTextView.text += "\n*** Started new PREFETCH process ***\n"
+                let progressHandler: ProgressHandler = {progress in
                     self.prefetchButton.setTitle("Fetched:\(progress)%", for: .normal)
                     self.prefetchButton.invalidateIntrinsicContentSize()
                 }
+                let loadingStatusHandler: LoadingStatusHandler = { [self] urlString, sizeString in
+                    addToLog(urlString: urlString, sizeString: sizeString)
+                }
+                try sdkController.navigateTo(url: url, progressHandler: progressHandler, loadingStatusHandler:  loadingStatusHandler)
             } catch InvalidUrlError.runtimeError(let message){
                 self.showToast(message: message, seconds: 2.0)
             } catch {
@@ -67,6 +91,12 @@ class ViewController: UIViewController {
         
         if let url = URL(string: urlString) {
             do {
+                statusLineCount = 0
+                loadingStatusTextView.text += "\n*** Started new NAVIGATE process ***\n"
+                let loadingStatusHandler: LoadingStatusHandler = { [self] urlString, sizeString in
+                    addToLog(urlString: urlString, sizeString: sizeString)
+                }
+                try sdkController.navigateTo(url: url, progressHandler: nil, loadingStatusHandler:  loadingStatusHandler)
                 try sdkController.navigateTo(url: url, progressHandler: nil)
                 sdkController.modalPresentationStyle = .fullScreen
                 present(sdkController, animated: true)
