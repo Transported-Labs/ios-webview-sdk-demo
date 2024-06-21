@@ -70,7 +70,7 @@ class ViewController: UIViewController {
         
         statusLineCount = 0
         do {
-            try sdkController.prefetch(urlString: urlString, logHandler:  addToLog)
+            try sdkController.prefetch(urlString: urlString, mainView: self.view, logHandler: addToLog)
         } catch InvalidUrlError.runtimeError(let message){
             self.showToast(message: message, seconds: 2.0)
         } catch {
