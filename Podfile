@@ -9,7 +9,8 @@ target 'WebViewDemo' do
   source 'https://github.com/CocoaPods/Specs.git'
 
   # Pods for WebViewDemo
-  pod 'CueLightShow'
+#  pod 'CueLightShow'
+  pod 'CueLightShow', :git => 'https://github.com/Transported-Labs/ios-webview-sdk.git', :branch => 'main'
   # Comment out the line above, uncomment line below to debug using local WebViewSDK
   #pod 'CueLightShow', :path => '../ios-webview-sdk'
 end
