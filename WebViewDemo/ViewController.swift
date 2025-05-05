@@ -10,7 +10,7 @@ import CueLightShow
 
 class ViewController: UIViewController {
 
-    lazy var sdkController = WebViewController()
+    lazy var sdkController = WebViewController(logHandler: addToLog)
     lazy var scannerViewController = ScannerViewController()
     
     @IBOutlet weak var urlTextField: UITextField!
@@ -62,6 +62,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func prefetchButtonPressed(_ sender: Any) {
+        hideKeyboardForUrlText()
         let urlString = self.urlTextField.text ?? ""
         guard urlString != "" else {
             print("Empty URL is not allowed")
@@ -70,7 +71,7 @@ class ViewController: UIViewController {
         
         statusLineCount = 0
         do {
-            try sdkController.prefetch(urlString: urlString, mainView: self.view, logHandler: addToLog)
+            try sdkController.prefetch(urlString: urlString, mainView: self.view)
         } catch InvalidUrlError.runtimeError(let message){
             self.showToast(message: message, seconds: 2.0)
         } catch {
@@ -81,7 +82,7 @@ class ViewController: UIViewController {
     fileprivate func navigateToURL(_ urlString: String) {
         do {
             statusLineCount = 0
-            try sdkController.navigateTo(urlString: urlString, logHandler:  addToLog)
+            try sdkController.navigateTo(urlString: urlString)
             sdkController.modalPresentationStyle = .fullScreen
             present(sdkController, animated: true)
         } catch InvalidUrlError.runtimeError(let message){
@@ -92,6 +93,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func navigateButtonPressed(_ sender: Any) {
+        hideKeyboardForUrlText()
         let urlString = self.urlTextField.text ?? ""
         guard urlString != "" else {
             print("Empty URL is not allowed")
@@ -101,6 +103,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func navigateWithPrivacyButtonPressed(_ sender: Any) {
+        hideKeyboardForUrlText()
         let urlString = self.urlTextField.text ?? ""
         guard urlString != "" else {
             print("Empty URL is not allowed")
@@ -119,6 +122,10 @@ class ViewController: UIViewController {
                 sdkController.navigateToFile(url: url)
             }
         }
+    }
+    
+    fileprivate func hideKeyboardForUrlText() {
+        urlTextField.endEditing(true)
     }
 }
 
