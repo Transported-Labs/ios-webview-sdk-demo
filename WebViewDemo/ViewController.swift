@@ -22,6 +22,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         loadingStatusTextView.text = ""
     }
+
+    func handleDeepLink(_ url: URL) {
+        let link = url.absoluteString
+        print("Handling deep link: \(link)")
+        
+        self.urlTextField.text = link
+        if link.contains("https://") {
+            self.navigateButtonPressed(self)
+        }
+    }
     
     @IBAction func scanQRButtonPressed(_ sender: Any) {
         present(scannerViewController, animated: true)
