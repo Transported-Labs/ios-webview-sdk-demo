@@ -4,7 +4,8 @@
 <dict>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:portal.cueaudio.com/app</string>
+		<string>applinks:portal.cueaudio.com</string>
+		<string>applinks:cueuc.com</string>
 	</array>
 </dict>
 </plist>
